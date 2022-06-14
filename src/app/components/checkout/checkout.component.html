@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+    <div>
+        <div>
+            <label for="firstName">Total price is: {{this.totalPrice}} $</label><br><br>
+        </div>
+        <div>
+            <label for="firstName">First name:</label>
+            <input formControlName="firstName" type="text" id="firstName" name="firstName"><br><br>
+        </div>
+        <div>
+            <label  for="lastName">Last name:</label>
+            <input formControlName="lastName" type="text" id="lastName" name="lastName"><br><br>
+        </div>
+        <div>
+            <label  for="address">Address:</label>
+            <input formControlName="address" type="text" id="address" name="address"><br><br>
+        </div>
+        <div>
+            <label  for="city">City:</label>
+            <input formControlName="city" type="text" id="city" name="city"><br><br>
+        </div>
+        <div>
+            <label  for="postalCode">Postal Code: </label>
+            <input formControlName="postalCode" type="text" id="postalCode" name="postalCode"><br><br>
+        </div>
+        <div>
+            <label  for="country">Country:</label>
+            
+                <select formControlName="country" id="country" name="country">
+                    <option value="canada" id="canada" name="canada" >Canada</option>
+                    <option value="US" id="US" name="US" >US</option>
+                </select>
+                <br><br>
+        </div>
+        <div>
+            <label  for="paymentMethod">Payment Method:</label>
+            
+                <select formControlName="paymentMethod"  id="paymentMethod" name="paymentMethod">
+                    <option value="visa" id="visa" name="visa" >VISA</option>
+                    <option value="mastercard" id="mastercard" name="mastercard" >Mastercard</option>
+                </select>
+                <br><br>
+        </div>
+        <div>
+            <div *ngIf="form.controls['cardNumber'].hasError('max')">
+                number only.
+          </div> 
+            <label  for="cardNumber">Card Number:</label>
+            <input appAllownumbersonly formControlName="cardNumber" type="text" id="cardNumber" name="cardNumber" maxlength="16"><br><br>
+        </div>  
+        <div>
+            <label  for="cvc">CVC:</label>
+            <input appAllownumbersonly formControlName="cvc" type="text" id="cvc" name="cvc" maxlength="4" ><br><br>
+        </div>
+        
+        <label  for="cardName">Card Name:</label>
+        <input formControlName="cardName" type="text" id="cardName" name="cardName"><br><br>
+        <button (click)="submit()" [disabled]="!form.valid" value="Submit"> submit</button>
+    </div>
+  </form> 
+  

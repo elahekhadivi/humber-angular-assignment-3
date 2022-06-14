@@ -40,6 +40,15 @@ export class DataStoreService {
       this._cartItems.next(cartItems);
     });
   }
+  
+  addToOrders(item: OrderData) {
+    this._orders.pipe(
+      take(1)
+    ).subscribe((orderItems: OrderData[]) => {
+      orderItems.push(item);
+      this._orders.next(orderItems);
+    });
+  }
 
   filterProducts(text: string) {
     this._products.pipe(
@@ -58,7 +67,6 @@ export class DataStoreService {
       }
     })
   }
-
   setFullProductsList(products: ProductData[]) {
     this.fullProductList = products;
   }

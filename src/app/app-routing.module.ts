@@ -5,6 +5,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'account-info', component: AccountInfoComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

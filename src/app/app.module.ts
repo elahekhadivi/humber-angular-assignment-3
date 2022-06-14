@@ -21,6 +21,12 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AllownumbersonlyDirective } from './allownumbersonly.directive';
+import { ComponentComponent } from './components/component/component.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +40,11 @@ import { DatePipe } from '@angular/common';
     NavBarComponent,
     ItemComponent,
     CartItemComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    CheckoutComponent,
+    AllownumbersonlyDirective,
+    ComponentComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +54,8 @@ import { DatePipe } from '@angular/common';
     NoopAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
